@@ -1,0 +1,127 @@
+<div id="lp-register">
+  <div class="container wrapper">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="intro-texts">
+          <h1 class="text-white">Make Cool Friends !!!</h1>
+          <p>Friend Finder is a social network template that can be used to connect people. The template
+            offers Landing pages, News Feed, Image/Video Feed, Chat Box, Timeline and lot more. <br />
+            <br />Why are you waiting for? Buy it now.
+          </p>
+          <button class="btn btn-primary">Learn More</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-sm-offset-1">
+        <div class="reg-form-container">
+
+          <!-- Register/Login Tabs-->
+          <div class="reg-options">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#register" data-toggle="tab">Register</a></li>
+              <li><a href="#login" data-toggle="tab">Login</a></li>
+            </ul>
+            <!--Tabs End-->
+          </div>
+
+          <!--Registration Form Contents-->
+          <div class="tab-content">
+            <div class="tab-pane active" id="register">
+              <h3>Register Now !!!</h3>
+              <p class="text-muted">Be cool and join today. Meet millions</p>
+
+              <!--Register Form-->
+              <form name="registration_form" id='registration_form' class="form-inline" #registerForm="ngForm"
+                (ngSubmit)="register(registerForm)">
+                <div class="row">
+                  <div class="form-group col-xs-6">
+                    <label for="firstname" class="sr-only">First Name</label>
+                    <input id="firstname" class="form-control input-group-lg" type="text" name="firstname"
+                      title="Enter first name" placeholder="First name" #firstname="ngModel" ngModel required />
+                  </div>
+                  <div class="form-group col-xs-6">
+                    <label for="lastname" class="sr-only">Last Name</label>
+                    <input id="lastname" class="form-control input-group-lg" type="text" name="lastname"
+                      title="Enter last name" placeholder="Last name" #lastname="ngModel" ngModel required />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12">
+                    <label for="username" class="sr-only">Username</label>
+                    <input id="username" class="form-control input-group-lg" type="text" name="username"
+                      title="Enter username" placeholder="Your Username" #username="ngModel" ngModel required />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12">
+                    <label for="email" class="sr-only">Email</label>
+                    <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email"
+                      placeholder="Your Email" name="email" #email="ngModel" ngModel required />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12">
+                    <label for="password" class="sr-only">Password</label>
+                    <input id="password" class="form-control input-group-lg" type="password" name="password"
+                      #password="ngModel" ngModel required title="Enter password" placeholder="Password" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12">
+                    <label for="confirm" class="sr-only">Password</label>
+                    <input id="confirm" class="form-control input-group-lg" type="password" name="confirm"
+                      #confirm="ngModel" ngModel required title="Enter Confirm password"
+                      placeholder="Confirm Password" />
+                  </div>
+                </div>
+                <p><a href="#">Already have an account?</a></p>
+                <button class="btn btn-secondary" type="submit" [disabled]="!registerForm.valid">Signup</button>
+              </form>
+              <div class="alert alert-danger" style="margin-top: 10px;" *ngIf="error">
+                {{ message }}
+              </div>
+              <div class="alert alert-success" style="margin-top: 10px;" *ngIf="success">
+                {{ message }}
+              </div>
+              <!--Register Now Form Ends-->
+            </div>
+            <!--Registration Form Contents Ends-->
+
+            <!--Login-->
+            <div class="tab-pane" id="login">
+              <h3>Login</h3>
+              <p class="text-muted">Log into your account</p>
+
+              <!--Login Form-->
+              <form name="Login_form" id='Login_form' #login="ngForm" (ngSubmit)="loginForm(login)">
+                <div class="row">
+                  <div class="form-group col-xs-12">
+                    <label for="my-email" class="sr-only">Email</label>
+                    <input id="my-email" class="form-control input-group-lg" type="email" name="email"
+                      title="Enter Email" placeholder="Your Email" #email="ngModel" ngModel required/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12">
+                    <label for="my-password" class="sr-only">Password</label>
+                    <input id="my-password" class="form-control input-group-lg" type="password" name="password"
+                      title="Enter password" placeholder="Password" #password="ngModel" ngModel required/>
+                  </div>
+                </div>
+                <p><a href="#">Already have an account?</a></p>
+                <button class="btn btn-secondary" type="submit" [disabled]="!login.valid">Signup</button>
+              </form>
+              <!--Login Form Ends-->
+              <div class="alert alert-danger" style="margin-top: 10px;" *ngIf="error">
+                {{ message }}
+              </div>
+              <div class="alert alert-success" style="margin-top: 10px;" *ngIf="success">
+                {{ message }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

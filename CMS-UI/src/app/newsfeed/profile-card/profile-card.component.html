@@ -1,0 +1,6 @@
+<div class="profile-card">
+    <img src="/assets/images/avatar.png" alt="user" class="profile-photo" *ngIf="user.image == ''" />
+    <img [src]="'../../../../../gallery/profile/'+user.image" alt="user" class="profile-photo" *ngIf="user.image != ''" />
+    <h5><a routerLink="/profile" class="text-white">{{ user.firstname }} {{ user.lastname }}</a></h5>
+    <i class="fa fa-users"></i> {{ user.followers.length }} followers 
+  </div>
